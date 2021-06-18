@@ -1,12 +1,12 @@
 <template>
     <div>
-    <p>Information</p>
+        <p>Information</p>
         <div class="a0 a0-top">
             <h1>自己紹介サイトのトップ</h1>
         </div>
         <div class="b0">
-                <a class="ba" @click='state = "info_01"' href="#"><img class="imgb0" src="/home/user18/project_exam/src/assets/iphone7hello_TP_V4.jpg"><br>自己紹介</a>
-                <a class="ba" @click='state = "info_02"' href="#"><img class="imgb0" src="/home/user18/project_exam/src/assets/012stockphoto_TP_V4.jpg"><br>好きな季節</a>
+            <a class="ba" @click='state = "info_01"' href="#"><img class="imgb0" src="../assets/iphone7hello_TP_V4.jpg"><br>自己紹介</a>
+            <a class="ba" @click='state = "info_02"' href="#"><img class="imgb0" src="../assets/012stockphoto_TP_V4.jpg"><br>好きな季節</a>
         </div>
         <div class="c0">
             <ul>
@@ -15,6 +15,11 @@
                 <li><a @click='state = "info_02"' href="#">好きな季節</a></li>
             </ul>
         </div>
+        <main>
+            <Information v-if='state === "info"' />
+            <Infopage1 v-if='state === "info_01"' />
+            <Infopage2 v-if='state === "info_02"' />
+        </main>
     </div>
 </template>
 

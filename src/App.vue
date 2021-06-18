@@ -10,10 +10,10 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <main>
       <HelloWorld v-if='state === "hello"' msg="Welcome to Your Vue.js App" />
-      <information v-if='state === "info"' />
+      <Information v-if='state === "info"' />
       <Contact v-if='state === "contact"' />
-      <info_page1 v-if='state === "info_01"' />
-      <info_page2 v-if='state === "info_02"' />
+      <Infopage1 v-if='state === "info_01"' />
+      <Infopage2 v-if='state === "info_02"' />
     </main>
   </div>
 </template>
@@ -22,8 +22,8 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Information from "./components/Information.vue";
 import Contact from "./components/Contact.vue";
-import info_page1 from "./components/info_page1.vue";
-import info_page2 from"./components/info_page2.vue";
+import Infopage1 from "./components/Infopage1.vue";
+import Infopage2 from"./components/Infopage2.vue";
 
 export default {
   name: "app",
@@ -36,8 +36,8 @@ export default {
     HelloWorld,
     Information,
     Contact,
-    info_page1,
-    info_page2,
+    Infopage1,
+    Infopage2,
   },
 }
 </script>
