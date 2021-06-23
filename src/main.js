@@ -4,6 +4,7 @@ import vuetify from './plugins/vuetify'
 import Vueaxios from '../package.json'
 import axios from '../package.json'
 
+
 Vue.config.productionTip = false
 Vue.use(Vueaxios,axios)
 
