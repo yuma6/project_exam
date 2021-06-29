@@ -9,11 +9,20 @@
 </template>
 
 <script>
+import Vue from 'vue'
 const axios = require('axios');
-axios.get('http://wttr.in/Fukuoka?format=j1')
-    .then(function (response) {
-      console.log(response.data);
-  })
+new Vue({
+  // el: '#app',
+  data () {
+    return {
+      info: []
+    }
+  },
+  mounted () {
+    axios.get('http://wttr.in/Fukuoka?format=j1')
+        .then(response => (this.info = response))
+  }
+})
 
   export default {
     data: () => ({
