@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Weather from './components/Weather.vue';
+import Weather from './components/WeatherTest.vue';
 
 export default {
   name: 'App',

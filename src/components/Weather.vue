@@ -9,24 +9,21 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 const axios = require('axios');
-new Vue({
-  // el: '#app',
-  data () {
-    return {
-      info: []
-    }
-  },
-  mounted () {
-    axios.get('http://wttr.in/Fukuoka?format=j1')
-        .then(response => (this.info = response))
-  }
-})
+// new Vue({
+//   //el: '#app',
+  // data () {
+  //   return {
+  //     info: []
+  //   }
+  // },
+
+// });
 
   export default {
     data: () => ({
-      desserts: [
+      desserts: [//この中にaxiosから取得したデータを入れていた。入力しているデータは上書きされる
         {
           name: 1,
           calories: 1,
@@ -52,7 +49,7 @@ new Vue({
           iron: '7%',
         },
       ],
-      headers: [
+      headers: [//axiosで取得したデータがitemsに入るdessertsにある時、そのデータからvalueで指定出来る
         {
           text: 'Dessert (100g serving)',
           align: 'start',
@@ -66,5 +63,14 @@ new Vue({
         { text: 'Iron (%)', value: 'iron' },
       ],
     }),
+    mounted () {
+      let self = this
+      axios.get('http://wttr.in/Fukuoka?format=j1')
+      .then(function(response){(self.info = response)})//data内の配列へ、そこから5行目へ//response.data.weather等で位置を指定
+      //.then(function(response){(self.desserts = response.data.weather)})//多分こう
+      //.then(function(res){console.log(res)})
+      .then(function(){console.log(self.info)})
+    }
+    
   }
 </script>

@@ -1,18 +1,21 @@
+<template>
+  <v-data-table
+    dense
+    :headers="headers"
+    :items="desserts"
+    item-key="name"
+    class="elevation-1"
+  ></v-data-table>
+</template>
+
 <script>
-import axios from "axios"
-
-function callApi(url, callback) {
-  console.log()
-  axios
-    .get(url, { /*オプションがあれば書く*/ })
-    .then(response => {
-      callback(response)
-    })
-    .catch(e => {
-      console.log("Error occurred in API")
-      console.log(e)
-    });
+import weathercall from '/WeatherCall.vue'
+import weatherlist from '/WeatherList.vue'
+export default {
+  components: {
+    weathercall,
+    weatherlist,
+  },
 }
-
-export default {callFreadApi}
 </script>
+v-for
