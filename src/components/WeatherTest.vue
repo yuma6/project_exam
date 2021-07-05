@@ -54,7 +54,6 @@ export default {
           },
         ],
       serverDatas:[
-        //これの中身を7が受け取る
       ],
       loading: true,
 
@@ -65,8 +64,8 @@ export default {
     axios.get('http://wttr.in/Fukuoka?format=j1')
      //.then(function(res){console.log(res)}) //console.log確認用
         .then( res => {
-          
-          this.serverDatas = res.data.weather//res以降でデータの位置を指定。41-43へ送る
+          this.serverDatas = res.data.weather//res以降でデータの位置を指定。serverDatasへ送る
+          this.loading = false
         })
         .catch( e => {
           console.log(e)
@@ -74,9 +73,6 @@ export default {
         .finally(()=>{
           console.log("通信完了")
         })
-        setTimeout(() => {
-          this.loading = false;
-        }, 1500);
   },
 }
 
