@@ -61,7 +61,7 @@ export default {
   },
 
   mounted(){
-    axios.get('http://wttr.in/Fukuoka?format=j1')
+    axios.get('https://wttr.in/Fukuoka?format=j1')
      //.then(function(res){console.log(res)}) //console.log確認用
         .then( res => {
           this.serverDatas = res.data.weather//res以降でデータの位置を指定。serverDatasへ送る
